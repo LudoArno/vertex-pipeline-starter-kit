@@ -46,10 +46,10 @@ def pipeline(
 if __name__ == '__main__':
     PROJECT_ID = os.getenv("PROJECT_ID")
     SELECTED_CONFIGURATION = load_config("my_first_pipeline", "conf_1")
-    PIPELINE_NAME = "my_first_vertex_pipeline"
+    PIPELINE_NAME = "my_first_vertex_pipeline_ludovic"
 
     BUCKET_NAME = f"gs://vertex-{PROJECT_ID}"
-    SERVICE_ACCOUNT = f"vertex@{PROJECT_ID}.iam.gserviceaccount.com"
+    SERVICE_ACCOUNT = f"ludovic-arnaud-dev@va-predictive-staging.iam.gserviceaccount.com"
 
     compiler.Compiler().compile(pipeline_func=pipeline, package_path="./pipeline.json")
     aip.init(project=PROJECT_ID, staging_bucket=BUCKET_NAME)
